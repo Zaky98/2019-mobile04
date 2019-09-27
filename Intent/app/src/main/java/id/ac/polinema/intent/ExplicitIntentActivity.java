@@ -23,6 +23,6 @@ public class ExplicitIntentActivity extends AppCompatActivity {
 
     public void handleSubmit(View view) {
         String teks = teksInput.getText().toString();
-        teksOutput.setText("Hallo " + teks);
+        teksOutput.setText("Hallo" + teks);
     }
 }

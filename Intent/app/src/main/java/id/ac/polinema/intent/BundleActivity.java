@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.widget.EditText;
 
@@ -25,6 +26,7 @@ public class BundleActivity extends AppCompatActivity {
         usernameInput = findViewById(R.id.input_username);
         nameInput = findViewById(R.id.input_name);
         ageInput = findViewById(R.id.input_age);
+        ageInput.setInputType(InputType.TYPE_CLASS_NUMBER);
     }
 
     public void handleSubmit(View view) {
@@ -33,9 +35,9 @@ public class BundleActivity extends AppCompatActivity {
         int age = Integer.parseInt(ageInput.getText().toString());
 
         Intent intent = new Intent(this, ProfileBundleActivity.class);
-        intent.putExtra(USERNAME_KEY, username);
-        intent.putExtra(NAME_KEY, name);
-        intent.putExtra(AGE_KEY, age);
-        
+        intent.putExtra("USERNAME_KEY", username);
+        intent.putExtra("NAME_KEY", name);
+        intent.putExtra("AGE_KEY", age);
+        startActivity(intent);
     }
 }
